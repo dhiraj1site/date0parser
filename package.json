@@ -1,6 +1,6 @@
 {
   "name": "date0parser",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "The 0 dependency date parser for simple uses",
   "main": "index.js",
   "scripts": {

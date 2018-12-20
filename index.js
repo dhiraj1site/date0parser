@@ -51,7 +51,7 @@ date0parser.convert = function(format, ts) {
 
 date0parser.getDateTime = function(format=1) {
 	var tDate = new Date();
-	return format==1 ? `${tDate.getFullYear()}-${parseDate(tDate, 1.1)} ${tDate.getHours()}:${tDate.getMinutes()}:${tDate.getSeconds()}:00`
+	return format==1 ? `${tDate.getFullYear()}-${parseDate(tDate, 1.1)} ${tDate.getHours()}:${tDate.getMinutes()}:${tDate.getSeconds()}`
            : `${tDate.getFullYear()}-${parseDate(tDate, 1.1)} ${tDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;	
 }
 

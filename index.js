@@ -1,7 +1,11 @@
 "use strict";
 
-function date0parser(date, format) {
-	return Date.now();
+function date0parser(date, format, ts1, ts2) {
+	this.__date = date ? date : Date.now();
+	this.__format = format ? format : 1;
+	this.__ts1 = ts1;
+	this.__ts2 = ts2;
+	return parseDate(date, format);
 }
 
 date0parser.now = function(format) {

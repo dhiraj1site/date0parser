@@ -45,7 +45,7 @@ date0parser.addDays = function(date=Date.now(), days=0, format=2.2) {
 }
 
 function parseDate(_date, v) {
-	let _month = ("0" + _date.getMonth()+1).slice(-2);
+	let _month = (`0 ${_date.getMonth()+1}`).slice(-2);
 	let _day = ("0" + _date.getDate()).slice(-2);
 	switch (v) {
 		case 1.1:

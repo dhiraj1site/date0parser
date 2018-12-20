@@ -1,10 +1,10 @@
 "use strict";
 
-function simpleDate(date, format) {
+function date0parser(date, format) {
 	return Date.now();
 }
 
-simpleDate.now = function(format) {
+date0parser.now = function(format) {
 	if (!format) return Date.now();
 	var tDate = new Date();
 	switch (format) {
@@ -19,7 +19,7 @@ simpleDate.now = function(format) {
 	}
 };
 
-simpleDate.convert = function(format, ts) {
+date0parser.convert = function(format, ts) {
 	if (!format || !ts) throw 'please provide the format code and date';
 	var eq;
 	switch(ts.toString().length) {
@@ -47,7 +47,7 @@ simpleDate.convert = function(format, ts) {
 	}
 };
 
-simpleDate.getDateTime = function() {
+date0parser.getDateTime = function() {
 	var tDate = new Date();
 	return `${tDate.getFullYear()}-${parseDate(tDate, 1.1)} ${tDate.getMinutes()}:${tDate.getSeconds()}:00`;
 }
@@ -63,4 +63,3 @@ function parseDate(_date, v) {
 	}
 }
 
-console.log(simpleDate.getDateTime());

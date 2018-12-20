@@ -1,15 +1,13 @@
 "use strict";
 
-function date0parser(date, format, ts1, ts2) {
-	this.__date = date ? date : Date.now();
-	this.__format = format ? format : 1;
-	this.__ts1 = ts1;
-	this.__ts2 = ts2;
-	return parseDate(date, format);
+function date0parser(date, format) {
+	this.date = date;
+	this.format = format;
+	this.truems = date ? (date.toString().length>10) : false;
 }
 
-date0parser.now = function(format) {
-	if (!format) return Date.now();
+
+date0parser.now = function(format=1) {
 	var tDate = new Date();
 	switch (format) {
 		case 1:

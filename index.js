@@ -36,7 +36,7 @@ date0parser.convert = function(format, ts) {
 		default:
 			throw 'incorrect timestamp';
 	}
-	var tDate = new Date(ts*1);
+	var tDate = new Date(ts*eq);
 	switch (format) {
 		case 1:
 			return `${tDate.getFullYear()}-${tDate.getMonth()}-${tDate.getDate()}`;

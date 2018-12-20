@@ -47,9 +47,10 @@ date0parser.convert = function(format, ts) {
 	}
 };
 
-date0parser.getDateTime = function() {
+date0parser.getDateTime = function(format=1) {
 	var tDate = new Date();
-	return `${tDate.getFullYear()}-${parseDate(tDate, 1.1)} ${tDate.getMinutes()}:${tDate.getSeconds()}:00`;
+	return format==1 ? `${tDate.getFullYear()}-${parseDate(tDate, 1.1)} ${tDate.getHours()}:${tDate.getMinutes()}:${tDate.getSeconds()}:00`
+           : `${tDate.getFullYear()}-${parseDate(tDate, 1.1)} ${tDate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;	
 }
 
 function parseDate(_date, v) {
@@ -62,4 +63,7 @@ function parseDate(_date, v) {
 			return `${_month}/${_day}`;
 	}
 }
+
+
+module.exports = date0parser;
 
